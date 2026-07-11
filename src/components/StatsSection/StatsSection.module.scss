@@ -1,0 +1,143 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0 clamp(58px, 7vw, 104px);
+  background: var(--color-section-gray);
+  color: var(--color-light-text);
+}
+
+.imageWrap {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: clamp(390px, 46vw, 620px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.statsPanel {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 64px, 980px);
+  margin: clamp(-118px, -7.6vw, -74px) max(32px, calc((100vw - var(--container-wide)) / 2 + 32px)) 0 auto;
+  padding: clamp(34px, 4.4vw, 58px) clamp(34px, 5vw, 60px);
+  background: var(--color-green-950);
+  opacity: 0;
+  transform: translate3d(96px, 0, 0);
+  transition: opacity 620ms ease, transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.statsPanelVisible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 62px);
+}
+
+.item {
+  min-width: 0;
+}
+
+.value {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-light-text);
+  font-size: clamp(34px, 3.8vw, 44px);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.label {
+  display: block;
+  max-width: 180px;
+  color: rgba(247, 243, 234, 0.72);
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.32;
+  font-weight: 400;
+}
+
+@media (max-width: 980px) {
+  .section {
+    padding-block: 0 68px;
+  }
+
+  .imageWrap {
+    width: 100%;
+  }
+
+  .image {
+    height: clamp(340px, 58vw, 520px);
+  }
+
+  .statsPanel {
+    width: min(100% - 44px, 760px);
+    margin: -82px 22px 0 auto;
+    padding: 34px;
+    transform: translate3d(0, 72px, 0);
+  }
+
+  .statsPanelVisible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    padding-block: 0 54px;
+  }
+
+  .imageWrap {
+    width: 100%;
+  }
+
+  .image {
+    height: 340px;
+  }
+
+  .statsPanel {
+    width: min(100% - 24px, 420px);
+    margin: -58px auto 0;
+    padding: 28px 24px;
+    transform: translate3d(0, 64px, 0);
+  }
+
+  .statsPanelVisible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .label {
+    max-width: 150px;
+    font-size: 13px;
+  }
+
+  .value {
+    margin-bottom: 10px;
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statsPanel {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

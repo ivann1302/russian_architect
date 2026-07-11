@@ -1,0 +1,201 @@
+.hero {
+  --hero-parallax: 0px;
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-light-text);
+  background: var(--color-green-950);
+}
+
+.media,
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.media {
+  background-image: url("/assets/hero/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, var(--hero-parallax), 0) scale(1.08);
+  will-change: transform;
+}
+
+.overlay {
+  background:
+    linear-gradient(90deg, rgba(16, 40, 32, 0.72) 0%, rgba(16, 40, 32, 0.54) 32%, rgba(16, 40, 32, 0.2) 68%, rgba(16, 40, 32, 0.06) 100%),
+    linear-gradient(180deg, rgba(16, 40, 32, 0.28) 0%, rgba(16, 40, 32, 0.08) 44%, rgba(16, 40, 32, 0.34) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 32px, var(--container-wide));
+  margin-inline: auto;
+  padding-top: var(--header-height);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
+  gap: clamp(36px, 5vw, 76px);
+  align-items: center;
+}
+
+.content {
+  max-width: 780px;
+  padding-block: clamp(96px, 16vh, 164px) clamp(56px, 10vh, 104px);
+}
+
+.label {
+  margin: 0 0 20px;
+  color: var(--color-gold-500);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 940px;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 6.4vw, 104px);
+  line-height: 0.96;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: rgba(247, 243, 234, 0.84);
+  font-size: clamp(17px, 1.45vw, 21px);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.calculator {
+  width: 100%;
+  justify-self: end;
+  padding-block: clamp(96px, 16vh, 164px) clamp(56px, 10vh, 104px);
+}
+
+.mobileBenefits {
+  display: none;
+}
+
+@media (max-width: 1120px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .content {
+    padding-bottom: 28px;
+  }
+
+  .calculator {
+    justify-self: stretch;
+    padding-block: 0 clamp(56px, 8vh, 92px);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 100svh;
+    align-items: stretch;
+  }
+
+  .media {
+    background-position: 72.9% center;
+    transform: translate3d(0, calc(var(--hero-parallax) * 0.5), 0) scale(1.08);
+  }
+
+  .media,
+  .overlay {
+    bottom: auto;
+    height: 100svh;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(90deg, rgba(16, 40, 32, 0.62) 0%, rgba(16, 40, 32, 0.46) 62%, rgba(16, 40, 32, 0.24) 100%),
+      linear-gradient(180deg, rgba(16, 40, 32, 0.3) 0%, rgba(16, 40, 32, 0.12) 46%, rgba(16, 40, 32, 0.42) 100%);
+  }
+
+  .inner {
+    width: min(100% - 24px, var(--container));
+    min-height: 0;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0;
+  }
+
+  .content {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding-block: calc(var(--header-height) + 170px) max(26px, calc(env(safe-area-inset-bottom) + 22px));
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .text {
+    max-width: 420px;
+    margin-inline: auto;
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  .actions {
+    display: grid;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 0;
+  }
+
+  .calculator {
+    width: calc(100% + 24px);
+    margin-inline: -12px;
+    padding: 44px 12px max(44px, calc(env(safe-area-inset-bottom) + 32px));
+    background: var(--color-cream);
+  }
+
+  .mobileBenefits {
+    display: block;
+    width: calc(100% + 24px);
+    margin-inline: -12px;
+  }
+
+  .calculator :global([class*="heroSection"]) {
+    color: var(--color-light-text);
+  }
+
+  .calculator :global([class*="heroSection"] [class*="card"]) {
+    width: 100%;
+    background: var(--color-green-900);
+    border-color: rgba(16, 40, 32, 0.16);
+    box-shadow: 0 18px 50px rgba(16, 40, 32, 0.14);
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media {
+    transform: scale(1.01);
+    will-change: auto;
+  }
+}

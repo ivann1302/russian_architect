@@ -1,0 +1,144 @@
+---
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { HeroBenefitsSection } from "@/components/HeroBenefitsSection";
+import { LeadPopup } from "@/components/LeadPopup";
+import { ApproachSection } from "@/components/ApproachSection";
+import { CtaSection } from "@/components/CtaSection";
+import { ContactsSection } from "@/components/ContactsSection";
+import { CustomCursor } from "@/components/CustomCursor";
+import { DetailsSection } from "@/components/DetailsSection";
+import { FloatingSocials } from "@/components/FloatingSocials";
+import { FounderSection } from "@/components/FounderSection";
+import { Footer } from "@/components/Footer";
+import { PortfolioSection } from "@/components/PortfolioSection";
+import { ProjectCtaSection } from "@/components/ProjectCtaSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { StatsSection } from "@/components/StatsSection";
+import { WorkProcessSection } from "@/components/WorkProcessSection";
+import { siteContent } from "@/data/siteContent";
+import "@/styles/global.scss";
+
+const siteUrl = "https://skrusskizodchy.ru";
+const pageTitle = `${siteContent.company.name} - ремонт квартир и домов в Москве и МО`;
+const pageDescription = `${siteContent.company.name}: ремонт квартир и домов в Москве и МО с понятным процессом и заявкой в Telegram.`;
+const previewImage = `${siteUrl}/assets/meta/og-image.jpg`;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <script is:inline>
+      document.documentElement.classList.add("reveal-enabled");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta name="theme-color" content="#102820" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={previewImage} />
+    <meta property="og:image:secure_url" content={previewImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Русский Зодчий - ремонт квартир и домов под ключ в Москве и МО" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={previewImage} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header client:load />
+    <main>
+      <Hero client:load />
+      <HeroBenefitsSection />
+      <ApproachSection />
+      <ServicesSection client:load />
+      <PortfolioSection client:load />
+      <WorkProcessSection />
+      <ProjectCtaSection />
+      <FounderSection client:load />
+      <DetailsSection client:load />
+      <StatsSection client:load />
+      <ReviewsSection client:load />
+      <CtaSection client:load />
+      <ContactsSection client:load />
+    </main>
+    <Footer />
+    <FloatingSocials client:load />
+    <CustomCursor client:load />
+    <LeadPopup client:load />
+    <script is:inline>
+      (() => {
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        const revealTargets = () => {
+          const sections = Array.from(document.querySelectorAll("main > section"));
+          const targets = new Set();
+
+          sections.forEach((section) => {
+            targets.add(section);
+
+            const directChildren = Array.from(section.querySelectorAll(":scope > div > *, :scope > article > *, :scope > div > div > article, :scope > div > div > figure"));
+            directChildren.slice(0, 10).forEach((element, index) => {
+              if (element instanceof HTMLElement && !element.hasAttribute("style")) {
+                element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
+                targets.add(element);
+              }
+            });
+          });
+
+          return Array.from(targets).filter((element) => element instanceof HTMLElement);
+        };
+
+        const show = (element) => {
+          element.setAttribute("data-reveal", "visible");
+        };
+
+        const init = () => {
+          const targets = revealTargets();
+
+          if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+            targets.forEach(show);
+            return;
+          }
+
+          targets.forEach((element) => element.setAttribute("data-reveal", "hidden"));
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                show(entry.target);
+                observer.unobserve(entry.target);
+              });
+            },
+            {
+              rootMargin: "0px 0px -12% 0px",
+              threshold: 0.12,
+            },
+          );
+
+          targets.forEach((element) => observer.observe(element));
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init, { once: true });
+        } else {
+          init();
+        }
+      })();
+    </script>
+  </body>
+</html>

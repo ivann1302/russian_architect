@@ -1,0 +1,137 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.62;
+  transform: none;
+}
+
+.size-sm {
+  min-height: 40px;
+  padding-inline: 18px;
+  font-size: 11px;
+}
+
+.size-md {
+  min-height: 48px;
+  padding-inline: 24px;
+  font-size: 12px;
+}
+
+.size-lg {
+  min-height: 56px;
+  padding-inline: 30px;
+  font-size: 13px;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.weight-regular {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-semibold {
+  font-weight: 600;
+}
+
+.uppercase {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.variant-gold {
+  background: var(--color-gold-500);
+  color: var(--color-green-950);
+}
+
+.variant-gold:hover {
+  background: var(--color-gold-400);
+}
+
+.variant-green {
+  background: var(--color-green-900);
+  color: var(--color-white);
+}
+
+.variant-green:hover {
+  background: var(--color-green-800);
+}
+
+.variant-light {
+  background: var(--color-section-gray);
+  color: var(--color-green-950);
+}
+
+.variant-light:hover {
+  background: var(--color-light-text);
+}
+
+.variant-outlineLight {
+  border-color: var(--color-border-dark);
+  color: var(--color-light-text);
+  background: transparent;
+}
+
+.variant-outlineLight:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.variant-ghostLight {
+  background: transparent;
+  color: var(--color-light-text);
+}
+
+.variant-ghostLight:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
