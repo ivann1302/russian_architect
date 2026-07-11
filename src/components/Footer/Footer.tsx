@@ -1,4 +1,5 @@
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import styles from "./Footer.module.scss";
 
 function TelegramIcon() {
@@ -92,8 +93,8 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <a className={styles.brand} href="/" aria-label={`${company.name}, на главную`}>
-          <img className={styles.logo} src="/assets/rrr-logo.png" alt="" width="180" height="75" />
+        <a className={styles.brand} href={withBase("/")} aria-label={`${company.name}, на главную`}>
+          <img className={styles.logo} src={withBase("/assets/rrr-logo.png")} alt="" width="180" height="75" />
         </a>
 
         <div className={styles.company}>
@@ -106,7 +107,7 @@ export function Footer() {
         <div className={styles.meta}>
           <a href={`tel:+7${contacts.phone.replace(/\D/g, "").replace(/^8/, "")}`}>{contacts.phoneLabel}</a>
           <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
-          <a href="/politika">Политика обработки персональных данных</a>
+          <a href={withBase("/politika")}>Политика обработки персональных данных</a>
           <span className={styles.credit}>
             Сайт разработан{" "}
             <a href="https://project42-studio.ru" target="_blank" rel="noreferrer">

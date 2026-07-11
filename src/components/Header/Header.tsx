@@ -2,6 +2,7 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import styles from "./Header.module.scss";
 
 export function Header() {
@@ -28,8 +29,8 @@ export function Header() {
       className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isMenuOpen ? `${styles.menuOpen} site-menu-open` : ""}`}
     >
       <div className={styles.inner}>
-        <a className={styles.brand} href="/" aria-label={`${siteContent.company.name}, на главную`} onClick={closeMenu}>
-          <img className={styles.logo} src="/assets/rrr-logo.png" alt="" width="180" height="75" />
+        <a className={styles.brand} href={withBase("/")} aria-label={`${siteContent.company.name}, на главную`} onClick={closeMenu}>
+          <img className={styles.logo} src={withBase("/assets/rrr-logo.png")} alt="" width="180" height="75" />
         </a>
 
         <nav className={styles.nav} aria-label="Основная навигация">
@@ -62,8 +63,8 @@ export function Header() {
       </div>
 
       <div className={styles.mobilePanel} id="mobile-menu" data-open={isMenuOpen}>
-        <a className={styles.mobileBrand} href="/" aria-label={`${siteContent.company.name}, на главную`} onClick={closeMenu}>
-          <img className={styles.mobileLogo} src="/assets/rrr-logo.png" alt="" width="180" height="75" />
+        <a className={styles.mobileBrand} href={withBase("/")} aria-label={`${siteContent.company.name}, на главную`} onClick={closeMenu}>
+          <img className={styles.mobileLogo} src={withBase("/assets/rrr-logo.png")} alt="" width="180" height="75" />
         </a>
         <nav className={styles.mobileNav} aria-label="Мобильная навигация">
           {siteContent.nav.map((item) => (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { withBase } from "@/utils/paths";
 import styles from "./LeadPopup.module.scss";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
@@ -145,7 +146,7 @@ export function LeadPopup() {
               <input type="checkbox" checked={isConsentChecked} onChange={(event) => setIsConsentChecked(event.target.checked)} />
               <span>
                 Нажимая на кнопку, я соглашаюсь с{" "}
-                <a href="/politika" target="_blank" rel="noreferrer">
+                <a href={withBase("/politika")} target="_blank" rel="noreferrer">
                   политикой обработки персональных данных
                 </a>
               </span>

@@ -2,6 +2,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import "@/styles/global.scss";
 
 const siteUrl = "https://skrusskizodchy.ru";
@@ -17,8 +18,8 @@ const pageDescription = `Политика обработки персональ�
     <meta name="description" content={pageDescription} />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href={`${siteUrl}/politika`} />
-    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href={withBase("/favicon-32x32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} sizes="180x180" />
     <meta name="theme-color" content="#102820" />
     <title>{pageTitle}</title>
   </head>

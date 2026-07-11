@@ -16,7 +16,7 @@
 }
 
 .media {
-  background-image: url("/assets/hero/hero-bg.png");
+  background-image: var(--hero-image);
   background-size: cover;
   background-position: center;
   transform: translate3d(0, var(--hero-parallax), 0) scale(1.08);

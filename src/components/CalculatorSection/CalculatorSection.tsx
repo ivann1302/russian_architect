@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { withBase } from "@/utils/paths";
 import styles from "./CalculatorSection.module.scss";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
@@ -207,7 +208,7 @@ export function CalculatorSection({ variant = "section" }: CalculatorSectionProp
               {step === 2 ? (
                 <p className={styles.legal}>
                   Нажимая кнопку, вы соглашаетесь с{" "}
-                  <a href="/politika" target="_blank" rel="noreferrer">
+                  <a href={withBase("/politika")} target="_blank" rel="noreferrer">
                     политикой обработки персональных данных
                   </a>
                 </p>

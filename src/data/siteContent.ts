@@ -1,3 +1,5 @@
+import { withBase } from "@/utils/paths";
+
 export const siteContent = {
   company: {
     name: "Русский Зодчий",
@@ -44,7 +46,7 @@ export const siteContent = {
   ],
   stats: {
     image: {
-      src: "/assets/stats-interior-v2.png",
+      src: withBase("/assets/stats-interior-v2.png"),
       alt: "Современный интерьер квартиры после ремонта под ключ",
     },
     items: [
@@ -76,7 +78,7 @@ export const siteContent = {
         title: "Стыки без случайных порогов",
         text: "Заранее сводим уровни покрытий, чтобы переходы между материалами выглядели цельно и спокойно.",
         image: {
-          src: "/assets/details/floor-joint.png",
+          src: withBase("/assets/details/floor-joint.png"),
           alt: "Аккуратный стык напольных покрытий без порога",
         },
       },
@@ -84,7 +86,7 @@ export const siteContent = {
         title: "Розетки в одной линии",
         text: "Выставляем электрику по проекту и контролируем геометрию рамок до финальной приемки.",
         image: {
-          src: "/assets/details/outlets.png",
+          src: withBase("/assets/details/outlets.png"),
           alt: "Ровно установленные розетки и выключатели на стене",
         },
       },
@@ -92,7 +94,7 @@ export const siteContent = {
         title: "Теневые плинтусы и чистые примыкания",
         text: "Делаем узлы стены и пола аккуратными, без волны, щелей и лишних декоративных компромиссов.",
         image: {
-          src: "/assets/details/baseboard.png",
+          src: withBase("/assets/details/baseboard.png"),
           alt: "Скрытый плинтус с ровным теневым зазором",
         },
       },
@@ -100,7 +102,7 @@ export const siteContent = {
         title: "Фурнитура без перекосов",
         text: "Двери, ручки и ответные части ставим так, чтобы ими было приятно пользоваться каждый день.",
         image: {
-          src: "/assets/details/door-handle.png",
+          src: withBase("/assets/details/door-handle.png"),
           alt: "Аккуратно установленная дверная ручка в современном интерьере",
         },
       },
@@ -108,7 +110,7 @@ export const siteContent = {
         title: "Плиточные углы под контролем",
         text: "Сводим крупный формат, ниши и запилы в ровную геометрию без визуального шума.",
         image: {
-          src: "/assets/details/tile-corner.png",
+          src: withBase("/assets/details/tile-corner.png"),
           alt: "Ровный угол плиточной ниши с запилом под 45 градусов",
         },
       },
@@ -116,7 +118,7 @@ export const siteContent = {
         title: "Мебельные узлы в тон интерьеру",
         text: "Согласуем зазоры, подсветку и примыкания, чтобы встроенные решения выглядели частью архитектуры.",
         image: {
-          src: "/assets/details/cabinet-joint.png",
+          src: withBase("/assets/details/cabinet-joint.png"),
           alt: "Ровный мебельный стык с интегрированной подсветкой",
         },
       },
@@ -149,7 +151,7 @@ export const siteContent = {
     title: "Работаем с квартирами, домами и комплексными интерьерными проектами",
     text: "Подбираем формат работ под задачу: от отдельного ремонта до полного цикла с проектированием, комплектацией и сопровождением.",
     image: {
-      src: "/assets/hero/hero-bg.png",
+      src: withBase("/assets/hero/hero-bg.png"),
       alt: "Современный интерьер кухни-гостиной с продуманной отделкой",
     },
     items: [
@@ -181,15 +183,15 @@ export const siteContent = {
         area: "124 м²",
         images: [
           {
-            src: "/assets/portfolio/vk/processed/vk-96-01.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-96-01.jpg"),
             alt: "Дизайнерский ремонт под ключ в ЖК Левел Лесной",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-96-02.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-96-02.jpg"),
             alt: "Детали ремонта в ЖК Левел Лесной",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-96-03.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-96-03.jpg"),
             alt: "Интерьер проекта ЖК Левел Лесной",
           },
         ],
@@ -200,23 +202,23 @@ export const siteContent = {
         area: "69 м²",
         images: [
           {
-            src: "/assets/portfolio/vk/processed/vk-52-01.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-52-01.jpg"),
             alt: "Двухкомнатная квартира под ключ 69 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-52-02.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-52-02.jpg"),
             alt: "Фото ремонта двухкомнатной квартиры 69 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-52-03.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-52-03.jpg"),
             alt: "Интерьер двухкомнатной квартиры после ремонта",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-52-04.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-52-04.jpg"),
             alt: "Отделка в двухкомнатной квартире 69 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-52-05.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-52-05.jpg"),
             alt: "Ремонт квартиры под ключ 69 квадратных метров",
           },
         ],
@@ -227,23 +229,23 @@ export const siteContent = {
         area: "58 м²",
         images: [
           {
-            src: "/assets/portfolio/vk/processed/vk-50-01.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-50-01.jpg"),
             alt: "Двухкомнатная квартира 58 квадратных метров под ключ",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-50-02.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-50-02.jpg"),
             alt: "Фото ремонта двухкомнатной квартиры 58 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-50-03.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-50-03.jpg"),
             alt: "Интерьер двухкомнатной квартиры 58 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-50-04.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-50-04.jpg"),
             alt: "Отделочные работы в квартире 58 квадратных метров",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-50-05.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-50-05.jpg"),
             alt: "Ремонт квартиры 58 квадратных метров под ключ",
           },
         ],
@@ -254,15 +256,15 @@ export const siteContent = {
         area: "3 фото",
         images: [
           {
-            src: "/assets/portfolio/vk/processed/vk-97-01.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-97-01.jpg"),
             alt: "Фото работ со страницы Русский Зодчий",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-97-02.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-97-02.jpg"),
             alt: "Фото выполненных работ Русский Зодчий",
           },
           {
-            src: "/assets/portfolio/vk/processed/vk-97-03.jpg",
+            src: withBase("/assets/portfolio/vk/processed/vk-97-03.jpg"),
             alt: "Фотография объекта Русский Зодчий",
           },
         ],
@@ -311,31 +313,31 @@ export const siteContent = {
     title: "Что говорят наши заказчики",
     items: [
       {
-        src: "/assets/reviews/review-20260711115917.webp",
+        src: withBase("/assets/reviews/review-20260711115917.webp"),
         alt: "Скриншот отзыва клиента о ремонте от Русского Зодчего",
       },
       {
-        src: "/assets/reviews/review-20260711115930.webp",
+        src: withBase("/assets/reviews/review-20260711115930.webp"),
         alt: "Скриншот отзыва клиента о работе команды Русский Зодчий",
       },
       {
-        src: "/assets/reviews/review-20260711115943.webp",
+        src: withBase("/assets/reviews/review-20260711115943.webp"),
         alt: "Скриншот отзыва заказчика о ремонте квартиры",
       },
       {
-        src: "/assets/reviews/review-20260711115953.webp",
+        src: withBase("/assets/reviews/review-20260711115953.webp"),
         alt: "Скриншот отзыва заказчика о ремонте под ключ",
       },
       {
-        src: "/assets/reviews/review-20260711120017.webp",
+        src: withBase("/assets/reviews/review-20260711120017.webp"),
         alt: "Скриншот отзыва клиента о качестве ремонта",
       },
       {
-        src: "/assets/reviews/review-20260711120031.webp",
+        src: withBase("/assets/reviews/review-20260711120031.webp"),
         alt: "Скриншот отзыва клиента о сотрудничестве с Русским Зодчим",
       },
       {
-        src: "/assets/reviews/review-20260711120114.webp",
+        src: withBase("/assets/reviews/review-20260711120114.webp"),
         alt: "Скриншот отзыва клиента о выполненных работах",
       },
     ],
@@ -344,7 +346,7 @@ export const siteContent = {
     title: "Готовы обсудить проект?",
     text: "Оставьте контакт - вернемся с вопросами по объекту и первым ориентиром.",
     image: {
-      src: "/assets/rrr-interier-edited.jpg",
+      src: withBase("/assets/rrr-interier-edited.jpg"),
       alt: "Светлый интерьер спальни после ремонта",
     },
     benefits: ["бюджет", "сроки", "этапы работ"],

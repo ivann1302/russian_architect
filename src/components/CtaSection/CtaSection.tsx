@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Circle } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
 import { useParallaxImage } from "@/hooks/useParallaxImage";
+import { withBase } from "@/utils/paths";
 import styles from "./CtaSection.module.scss";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
@@ -104,7 +105,7 @@ export function CtaSection() {
               <input type="checkbox" checked={isConsentChecked} onChange={(event) => setIsConsentChecked(event.target.checked)} />
               <span>
                 {form.consent} и принимаю{" "}
-                <a href="/politika" target="_blank" rel="noreferrer">
+                <a href={withBase("/politika")} target="_blank" rel="noreferrer">
                   политику обработки персональных данных
                 </a>
               </span>

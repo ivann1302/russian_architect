@@ -18,6 +18,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { StatsSection } from "@/components/StatsSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import "@/styles/global.scss";
 
 const siteUrl = "https://skrusskizodchy.ru";
@@ -36,8 +37,8 @@ const previewImage = `${siteUrl}/assets/meta/og-image.jpg`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={siteUrl} />
-    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href={withBase("/favicon-32x32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} sizes="180x180" />
     <meta name="theme-color" content="#102820" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />

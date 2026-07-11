@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import styles from "./ProjectCtaSection.module.scss";
 
 export function ProjectCtaSection() {
@@ -7,7 +8,7 @@ export function ProjectCtaSection() {
     <section className={styles.section} aria-labelledby="project-cta-title">
       <div className={styles.inner}>
         <div className={styles.sheetWrap} aria-hidden="true">
-          <img className={styles.sheetImage} src="/assets/cta/project-sheet-cutout.png" alt="" loading="lazy" />
+          <img className={styles.sheetImage} src={withBase("/assets/cta/project-sheet-cutout.png")} alt="" loading="lazy" />
         </div>
 
         <div className={styles.content}>

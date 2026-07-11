@@ -4,6 +4,7 @@ import { CalculatorSection } from "@/components/CalculatorSection";
 import { HeroBenefitsSection } from "@/components/HeroBenefitsSection";
 import { Button } from "@/components/ui/Button";
 import { siteContent } from "@/data/siteContent";
+import { withBase } from "@/utils/paths";
 import styles from "./Hero.module.scss";
 
 export function Hero() {
@@ -43,7 +44,17 @@ export function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero} id="hero" aria-labelledby="hero-title" style={{ "--hero-parallax": `${parallaxOffset}px` } as React.CSSProperties}>
+    <section
+      className={styles.hero}
+      id="hero"
+      aria-labelledby="hero-title"
+      style={
+        {
+          "--hero-image": `url("${withBase("/assets/hero/hero-bg.png")}")`,
+          "--hero-parallax": `${parallaxOffset}px`,
+        } as React.CSSProperties
+      }
+    >
       <div className={styles.media} aria-hidden="true" />
       <div className={styles.overlay} aria-hidden="true" />
 
